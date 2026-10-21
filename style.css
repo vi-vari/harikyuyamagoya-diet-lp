@@ -181,3 +181,16 @@ a {
   margin-bottom: calc(3 * var(--u));
   font-size: calc(16 * var(--u));
 }
+
+/* アクセス：地図部分をGoogleマップへのリンクにする */
+.access {
+  position: relative;
+}
+
+.access__map {
+  position: absolute;
+}
+
+.access__map:hover {
+  background: rgba(255, 255, 255, 0.15);
+}

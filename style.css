@@ -1,0 +1,183 @@
+/* デザイン幅 690px を基準に、画面幅が狭い場合は比率で縮小する */
+:root {
+  --u: min(1px, calc(100vw / 690));
+  --color-text: #333;
+  --color-price: #ff3500;
+  --font-base: "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Hiragino Sans", Meiryo, sans-serif;
+  --font-bold: "Zen Kaku Gothic Antique", var(--font-base);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--color-text);
+  font-family: var(--font-base);
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  display: block;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.lp {
+  max-width: 690px;
+  margin: 0 auto;
+  background: #fff;
+  overflow: hidden;
+}
+
+/* ヘッダー */
+.header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  height: calc(52 * var(--u));
+}
+
+.header__logo {
+  flex-shrink: 0;
+  width: calc(64 * var(--u));
+  height: calc(78 * var(--u));
+  margin-top: calc(-8 * var(--u));
+  background: #fff;
+}
+
+.header__text {
+  flex: 1;
+  padding: 0 calc(14 * var(--u));
+}
+
+.header__catch,
+.header__area {
+  display: flex;
+  align-items: center;
+  height: calc(26 * var(--u));
+  white-space: nowrap;
+}
+
+.header__catch {
+  font-size: calc(14 * var(--u));
+}
+
+.header__area {
+  padding-left: calc(2 * var(--u));
+  border-radius: 4px;
+  background: linear-gradient(to right, #f38887, #fff);
+  font-size: calc(16 * var(--u));
+  text-shadow: 1px 2px 0 #fff;
+}
+
+/* LINEボタン */
+.line-link {
+  transition: opacity 0.2s;
+}
+
+.line-link:hover {
+  opacity: 0.85;
+}
+
+.cta {
+  padding-top: calc(13 * var(--u));
+}
+
+.cta__note {
+  margin-bottom: calc(14 * var(--u));
+  font-size: calc(14 * var(--u));
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* 初回体験オファー */
+.offer {
+  padding-top: calc(12 * var(--u));
+  text-align: center;
+}
+
+.offer__limit {
+  font-family: var(--font-bold);
+  font-size: calc(40 * var(--u));
+  font-weight: 700;
+  line-height: calc(28 * var(--u));
+  letter-spacing: calc(5 * var(--u));
+}
+
+.offer__band {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(48 * var(--u));
+  margin-top: calc(16 * var(--u));
+  background: linear-gradient(-20deg, #f38887, #ffbdbd);
+  color: #fff;
+  font-size: calc(18 * var(--u));
+}
+
+.offer__menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(107 * var(--u));
+  margin: calc(18 * var(--u)) calc(35 * var(--u)) 0;
+  border: 1px solid red;
+  font-family: var(--font-bold);
+  font-size: calc(33 * var(--u));
+  font-weight: 700;
+  letter-spacing: calc(1.9 * var(--u));
+  white-space: nowrap;
+}
+
+.offer__menu-lead {
+  font-size: calc(35 * var(--u));
+  letter-spacing: calc(-1.1 * var(--u));
+}
+
+.offer__price {
+  margin-top: calc(18 * var(--u));
+  color: var(--color-price);
+  font-family: var(--font-bold);
+  font-size: calc(52 * var(--u));
+  font-weight: 700;
+  line-height: calc(63 * var(--u));
+  letter-spacing: calc(1.2 * var(--u));
+}
+
+.offer__price small {
+  font-size: calc(32 * var(--u));
+}
+
+.offer .cta {
+  padding-top: calc(32 * var(--u));
+}
+
+.offer .cta__note {
+  margin-bottom: calc(3 * var(--u));
+  font-size: calc(16 * var(--u));
+}
